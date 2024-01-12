@@ -1,5 +1,5 @@
 import { StyleSheet, TextInput, View, Text } from "react-native";
-
+import Colors from "../../constants/colors.android";
 function InputField({ value, placeholder, placeholderTextColor }) {
   return (
     <View style={[styles.textInputContainer]}>
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#98D1A1",
+    backgroundColor: Colors.primary800,
     borderRadius: 5,
   },
   textInputField: {

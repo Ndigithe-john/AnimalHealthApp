@@ -4,14 +4,18 @@ import {
   Text,
   Image,
   useWindowDimensions,
+  TouchableOpacity,
 } from "react-native";
 import Colors from "../constants/colors";
 
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { LinearGradient } from "expo-linear-gradient";
 function WelcomeScreen({ navigation }) {
-  function onPressHandler() {
+  function onLoginPressHandler() {
     navigation.navigate("Login");
+  }
+  function onRegistrationPressHandler() {
+    navigation.navigate("Registration");
   }
   const { width, height } = useWindowDimensions();
   let imageDimensions = 400;
@@ -29,7 +33,7 @@ function WelcomeScreen({ navigation }) {
   };
   return (
     <LinearGradient
-      colors={["#FF8181", "#57B262"]}
+      colors={[Colors.primary100, Colors.primary200]}
       style={styles.mainContainer}
     >
       <View style={styles.headerContainer}>
@@ -53,10 +57,12 @@ function WelcomeScreen({ navigation }) {
         </Text>
       </View>
 
-      <PrimaryButton onPress={onPressHandler}>Create Account</PrimaryButton>
-      <View style={styles.bottomText}>
+      <PrimaryButton onPress={onRegistrationPressHandler}>
+        Create Account
+      </PrimaryButton>
+      <TouchableOpacity style={styles.bottomText} onPress={onLoginPressHandler}>
         <Text>Already have an account</Text>
-      </View>
+      </TouchableOpacity>
     </LinearGradient>
   );
 }
@@ -98,7 +104,7 @@ const styles = StyleSheet.create({
   },
   secondDescriptionText: {
     fontSize: 21,
-    color: "#94666B",
+    color: Colors.primary300,
     fontWeight: "bold",
     fontStyle: "italic",
     marginBottom: 90,

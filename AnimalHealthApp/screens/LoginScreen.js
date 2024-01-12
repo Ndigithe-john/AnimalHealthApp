@@ -2,15 +2,22 @@ import { View, StyleSheet, Text } from "react-native";
 import InputField from "../components/ui/InputField";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import PrimaryButton from "../components/ui/PrimaryButton";
+import Colors from "../constants/colors.android";
 function LoginScreen() {
   return (
     <View style={styles.mainContainer}>
       <Text>Enter Your Login Details</Text>
       <View>
-        <InputField placeholder="Input Email" placeholderTextColor="#aaa" />
+        <InputField
+          placeholder="Input Email"
+          placeholderTextColor={Colors.primary700}
+        />
       </View>
       <View style={styles.passwordView}>
-        <InputField placeholder="Password" placeholderTextColor="#aaa" />
+        <InputField
+          placeholder="Password"
+          placeholderTextColor={Colors.primary700}
+        />
         <MaterialCommunityIcons
           style={styles.iconStyle}
           name={"eye"}
