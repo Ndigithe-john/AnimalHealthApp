@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     fontSize: 21,
     color: Colors.primary300,
     fontWeight: "bold",
+    fontFamily: "opensans_italic",
     fontStyle: "italic",
     marginBottom: 90,
   },
