@@ -1,33 +1,43 @@
-import { View, StyleSheet, TextInput, Text } from "react-native";
-
+import { View, StyleSheet, Text } from "react-native";
+import InputField from "../components/ui/InputField";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import PrimaryButton from "../components/ui/PrimaryButton";
 function LoginScreen() {
   return (
-    <View>
-      <Text>Enter Your Registration Details</Text>
-      <TextInput
-        style={styles.textInput}
-        placeholder="Email"
-        autoCapitalize="none"
-        autoComplete="none"
-        value="value"
-        autoCorrect={false}
-      />
+    <View style={styles.mainContainer}>
+      <Text>Enter Your Login Details</Text>
+      <View>
+        <InputField placeholder="Input Email" placeholderTextColor="#aaa" />
+      </View>
+      <View style={styles.passwordView}>
+        <InputField placeholder="Password" placeholderTextColor="#aaa" />
+        <MaterialCommunityIcons
+          style={styles.iconStyle}
+          name={"eye"}
+          size={24}
+        />
+      </View>
+      <View>
+        <PrimaryButton>Login</PrimaryButton>
+      </View>
     </View>
   );
 }
 export default LoginScreen;
 
 const styles = StyleSheet.create({
-  outerContainer: {
-    flex: 1,
+  mainContainer: {
+    marginTop: 30,
+    margin: 30,
+    gap: 40,
   },
-  textInput: {
-    height: 50,
-    width: "70%",
+  passwordView: {
+    marginLeft: -3,
+    flexDirection: "row",
     justifyContent: "center",
-    fontSize: 24,
-    borderBottomWidth: 2,
-    marginVertical: 8,
-    textAlign: "center",
+    alignItems: "center",
+  },
+  iconStyle: {
+    marginLeft: -30,
   },
 });

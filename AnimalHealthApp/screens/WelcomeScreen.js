@@ -6,10 +6,13 @@ import {
   useWindowDimensions,
 } from "react-native";
 import Colors from "../constants/colors";
-import { SafeAreaView } from "react-native-safe-area-context";
+
 import PrimaryButton from "../components/ui/PrimaryButton";
 import { LinearGradient } from "expo-linear-gradient";
-function WelcomeScreen() {
+function WelcomeScreen({ navigation }) {
+  function onPressHandler() {
+    navigation.navigate("Login");
+  }
   const { width, height } = useWindowDimensions();
   let imageDimensions = 400;
   if (width < 380) {
@@ -50,7 +53,7 @@ function WelcomeScreen() {
         </Text>
       </View>
 
-      <PrimaryButton>Create Account</PrimaryButton>
+      <PrimaryButton onPress={onPressHandler}>Create Account</PrimaryButton>
       <View style={styles.bottomText}>
         <Text>Already have an account</Text>
       </View>
